@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="main_border_pane" stylesheets="@css/fxmlmedgest.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLMedGestController">
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="MEDGEST" textFill="#bbc6c8">
+                           <font>
+                              <Font name="System Bold" size="55.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                        <VBox HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets top="35.0" />
+                           </HBox.margin>
+                           <children>
+                              <JFXTextField fx:id="patientIdField" focusColor="TRANSPARENT" onAction="#searchByPatientID" prefHeight="40.0" prefWidth="100.0" promptText="Patient ID" style="-fx-background-color: #BBC6C8; -fx-background-radius: 45;" styleClass="text-field" stylesheets="@css/fxmlmedgest.css" unFocusColor="TRANSPARENT" VBox.vgrow="ALWAYS">
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_RIGHT">
+               <children>
+                  <FontAwesomeIconView fx:id="back_arrow_ID" glyphName="ARROW_LEFT" onMouseClicked="#backArrowReturn" onMouseEntered="#backArrowMouseEnterd" onMouseExited="#backArrowMouseExited" size="50">
+                     <VBox.margin>
+                        <Insets right="20.0" />
+                     </VBox.margin>
+                  </FontAwesomeIconView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <right>
+      <VBox alignment="CENTER" prefHeight="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="btnAddDiagId" disable="true" onAction="#btnAddADiagnosis" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #BBC6C8; -fx-background-radius: 20;" text="ADD Diagnosis" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="62.0" layoutY="545.0" onAction="#btnPrescriptionRecipe" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #BBC6C8; -fx-background-radius: 20;" text="Prescription Recipe" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="62.0" layoutY="471.0" onAction="#btnAnalysisRecipe" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #BBC6C8; -fx-background-radius: 20;" text="Analysis Recipe" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </JFXButton>
+            <JFXButton onAction="#btnNextAppointment" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #BBC6C8; -fx-background-radius: 20;" text="Next Appointment" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <ListView fx:id="myListViewID" styleClass="custom-list-view" stylesheets="@css/fxmlmedgest.css" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="30.0" top="30.0" />
+         </BorderPane.margin>
+      </ListView>
+   </center>
+</BorderPane>

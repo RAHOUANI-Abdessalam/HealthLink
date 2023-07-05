@@ -1,0 +1,32 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.main_border_pane {
+    -fx-background-color: linear-gradient(to right top, #DDBEAA, #469597)
+}
+
+.text-field{
+    -fx-text-fill: #000000;
+}
+
+.text-field:focus {
+    -fx-background-color: DDBEAA;
+}
+
+.custom-list-view {
+    -fx-control-inner-background: #BBC6C8;
+    -fx-background-radius: 20;
+    -fx-text-fill: #ffffff;
+}
+
+.custom-list-view .list-cell {
+    -fx-text-fill: #ffffff;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-border-color: #ffffff;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-padding: 10 10 10 10;
+
+}

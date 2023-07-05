@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="main_border_pane" stylesheets="@css/fxmlpharmagest.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLPharmaGestController">
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="PHARMAGEST" textFill="#bbc6c8">
+                           <font>
+                              <Font name="System Bold" size="55.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox HBox.hgrow="ALWAYS" />
+                        <VBox HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets top="35.0" />
+                           </HBox.margin>
+                           <children>
+                              <JFXTextField fx:id="patientIdField" focusColor="TRANSPARENT" onAction="#searchByPatientID" prefHeight="40.0" prefWidth="100.0" promptText="Patient ID" style="-fx-background-color: #BBC6C8; -fx-background-radius: 45;" styleClass="text-field" stylesheets="@css/fxmlmedgest.css" unFocusColor="TRANSPARENT" VBox.vgrow="ALWAYS">
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                           <children>
+                              <FontAwesomeIconView fx:id="back_arrow_ID" glyphName="ARROW_LEFT" onMouseClicked="#backArrowReturn" onMouseEntered="#backArrowMouseEnterd" onMouseExited="#backArrowMouseExited" size="50">
+                                 <VBox.margin>
+                                    <Insets right="20.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                           </children></VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <JFXTextField fx:id="firstNameFieldID" focusColor="#469597" labelFloat="true" onAction="#searchByFirstName" prefWidth="280.0" promptText="First name" styleClass="text-field" stylesheets="@css/fxmlpharmagest.css" unFocusColor="#bbc6c8">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="familyNameFieldID" focusColor="#469597" labelFloat="true" onAction="#searchByFamilyName" prefWidth="280.0" promptText="Family name" styleClass="text-field" stylesheets="@css/fxmlpharmagest.css" unFocusColor="#bbc6c8">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="ageFieldID" focusColor="#469597" labelFloat="true" prefWidth="100.0" promptText="Age" styleClass="text-field" stylesheets="@css/fxmlpharmagest.css" unFocusColor="#bbc6c8">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="labelPatientIdentificationID" text="Patient not identified" textFill="RED" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="30.0" top="50.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="tablePrescription" stylesheets="@css/fxmlpharmagest.css" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="cellPrescriptionNumberID" prefWidth="158.0" text="Prescription number" />
+                <TableColumn fx:id="cellDiagnosisID" prefWidth="167.0" text="Diagnosis ID" />
+                  <TableColumn fx:id="cellCreationDateID" prefWidth="167.0" text="Creation Date" />
+                  <TableColumn fx:id="cellSaleDate" prefWidth="167.0" text="Sale Date" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="30.0" top="15.0" />
+               </VBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton onAction="#btnPrintPrescription" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #BBC6C8; -fx-background-radius: 20;" text="Print prescription" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </JFXButton>
+            <JFXButton onAction="#btnCheckInStock" prefHeight="60.0" prefWidth="230.0" style="-fx-background-color: #BBC6C8; -fx-background-radius: 20;" text="check in stock" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="30.0" />
+         </BorderPane.margin>
+         <children>
+            <JFXButton onAction="#btnReset" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #FF0000; -fx-background-radius: 20;" text=" Reset" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/reset.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btnSaleId" disable="true" onAction="#btnSale" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #00FF00; -fx-background-radius: 20;" text=" Sale" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Ok.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

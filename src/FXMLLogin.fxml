@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" spacing="50.0" styleClass="main_vbox" stylesheets="@css/login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLLoginController">
+   <children>
+      <Label text="DIAGBOT &amp; MEDGEST" textFill="#bbc6c8">
+         <font>
+            <Font name="System Bold" size="60.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="470.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 45;" VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="LOGIN" textFill="#469597">
+               <font>
+                  <Font name="System Bold" size="60.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" spacing="10.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="40.0" />
+               </VBox.margin>
+               <children>
+                  <FontAwesomeIconView fill="#469597" glyphName="USER" size="30" />
+                  <JFXTextField fx:id="userNameField" focusColor="#469597" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#btnEntrerFromUser" prefHeight="50.0" prefWidth="500.0" promptText="User name">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" spacing="10.0">
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+               <children>
+                  <FontAwesomeIconView fill="#469597" glyphName="LOCK" size="30" />
+                  <JFXPasswordField fx:id="passwordField" focusColor="#469597" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#btnEntrerFromPass" prefHeight="50.0" prefWidth="500.0" promptText="Password">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </JFXPasswordField>
+               </children>
+            </HBox>
+            <JFXButton onAction="#btnSignIn" style="-fx-background-color: #469597; -fx-background-radius: 15;" styleClass="btn-login" text="Sign in" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton layoutX="328.0" layoutY="293.0" onAction="#btnSignUp" text="Sign up" textFill="#469597">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton layoutX="328.0" layoutY="445.0" onAction="#btnforgetPassword" text="You forget your password !" textFill="#469597" />
+         </children>
+      </VBox>
+   </children>
+</VBox>

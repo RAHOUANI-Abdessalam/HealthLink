@@ -1,0 +1,29 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainBorderPane {
+    -fx-background-color: linear-gradient(to right top, #DDBEAA, #469597)
+}
+.textArea {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 25;
+    -fx-border-width: 5;
+    -fx-border-radius: 20;
+    -fx-border-color: #bbc6c8;
+    -fx-text-fill: #000000
+}
+
+.combo-box{
+    -fx-border-width: 5;
+    -fx-border-radius: 10;
+    -fx-border-color: #ffffff;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #ffffff;
+}
+
+/* Style the selected text */
+.combo-box .text-field {
+    -fx-text-fill: #000000; /* Set the color of the selected text */
+    /* Add any other desired styles */
+}
